@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: old-es
+spec:
+  selector:
+    matchLabels:
+      app: old-es
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: old-es
+    spec:
+      containers:
+        - name: old-es
+          image: elasticsearch:6.8.21
+
